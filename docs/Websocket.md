@@ -59,7 +59,7 @@ sending this message will unsubscribe you from that market, and can also subscri
 ```json
 {
   "MARKET": "lootboxes",
-  "TRADES": ["price", "amount", false],
+  "MESSAGE" : {"TRADES": ["price", "amount", false]}
   "SLOT": "slot"
 }
 ```
@@ -71,8 +71,17 @@ amounts are counted in lamports or whatever the smallest unit of the token is.
 
 ```json
 {
-  "MARKET" : "lootboxes",
-  {"ASKS": [[1, 1],[1, 1]], "BIDS": [[1, 1],[1, 1]]}
+  "MARKET": "lootboxes",
+  "MESSAGE": {
+    "ASKS": [
+      [1, 1],
+      [1, 1]
+    ],
+    "BIDS": [
+      [1, 1],
+      [1, 1]
+    ]
+  },
   "SLOT": 123456789
 }
 ```
@@ -81,4 +90,18 @@ in which, it comes in an object {} with two keys, `ASKS` and `BIDS`, each of the
 
 ### Open orders
 
-To be continued.
+```json
+{
+  "MARKET": "lootboxes",
+  "MESSAGE": { "UID_BIDS": [[[0, 0]]], "SLOT": 194571577 }
+}
+```
+
+```json
+{
+  "MARKET": "lootboxes",
+  "MESSAGE": { "UID_ASKS": [[[0, 0]]], "SLOT": 194571577 }
+}
+```
+
+in which, it comes in an object {} with two keys, `UID_ASKS` and `UID_BIDS`, each of them is an array [] of types [float, int], where the float is the price, and the int is the amount, amounts are counted in lamports or whatever the smallest unit of the token is.
