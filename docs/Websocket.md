@@ -34,9 +34,9 @@ sending this message will unsubscribe you from that market, and can also subscri
 
 ```json
 {
+  "MARKET": "lootboxes",
   "SUBSCRIBE": "USER",
-  "UID": 1,
-  "MARKET": "lootboxes"
+  "UID": 1
 }
 ```
 
@@ -46,13 +46,12 @@ sending this message will unsubscribe you from that market, and can also subscri
 
 ```json
 {
-    "MARKET": Market_name,
-    "MESSAGE": {
-        "CLAIMABLE_BALANCE": [0, 0],
-        "SLOT": 181429079,
-    },
+  "MARKET": "lootboxes",
+  "MESSAGE": {
+    "CLAIMABLE_BALANCE": [0, 0],
+    "SLOT": 181429079
+  }
 }
-
 ```
 
 ### Market Orders
@@ -71,11 +70,11 @@ amounts are counted in lamports or whatever the smallest unit of the token is.
 ### Orderbook
 
 ```json
-    {
-        "MARKET" : "lootboxes",
-        {"ASKS": [[1, 1],[1, 1]], "BIDS": [[1, 1],[1, 1]]}
-        "SLOT": 123456789
-    }
+{
+  "MARKET" : "lootboxes",
+  {"ASKS": [[1, 1],[1, 1]], "BIDS": [[1, 1],[1, 1]]}
+  "SLOT": 123456789
+}
 ```
 
 in which, it comes in an object {} with two keys, `ASKS` and `BIDS`, each of them is an array [] of types [float, int], where the float is the price, and the int is the amount, amounts are counted in lamports or whatever the smallest unit of the token is.
